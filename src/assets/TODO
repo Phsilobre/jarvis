@@ -1,0 +1,10 @@
+- Faire une maquette de l'écran d'ajout de repas.
+
+- Rajouter des infos sur les repas
+    - Durée
+    - Recette
+    - Ingrédients
+
+- Lors du changement d'un repas, afficher sa dernière planification.
+
+- Export liste courses par mail

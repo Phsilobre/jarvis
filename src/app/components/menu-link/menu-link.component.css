@@ -1,0 +1,12 @@
+a {
+    display: block;
+    font-size: 20px; 
+    color: #070733;
+    text-decoration: none;
+    border: 2px solid #2020AA;
+    border-radius: 10px;
+    background-color: #20BBFF;
+    width: 200px;
+    padding: 8% 0%;
+    text-align: center;
+}

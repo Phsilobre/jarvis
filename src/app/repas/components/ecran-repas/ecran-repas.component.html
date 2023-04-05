@@ -1,0 +1,155 @@
+<a (click)="onBack()"><img src="/assets/img/leftArrow.png"/></a>
+
+<div class="planning">
+    <div class="titlePlanning">Repas prévus</div>
+    <table mat-table [dataSource]="planning">
+        <ng-container matColumnDef="repas">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let weekPlanning">
+                <div class="bold">Midi</div>
+                <div class="separator"></div>
+                <div class="bold">Soir</div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="samedi">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(0)">Samedi</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(0)">
+                <div (click)="openContextMenu($event, 'l', 0)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(0) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 0)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(0) }}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="dimanche">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(1)">Dimanche</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(1)">
+                <div (click)="openContextMenu($event, 'l', 1)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(1) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 1)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(1) }}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="lundi">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(2)">Lundi</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(2)">
+                <div (click)="openContextMenu($event, 'l', 2)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(2) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 2)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(2) }}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="mardi">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(3)">Mardi</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(3)">
+                <div (click)="openContextMenu($event, 'l', 3)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(3) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 3)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(3) }}
+                </div>
+                <!--<div *ngIf="!weekPlanning.getMeal(3)">-</div>-->
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="mercredi">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(4)">Mercredi</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(4)">
+                <div (click)="openContextMenu($event, 'l', 4)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(4) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 4)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(4) }}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="jeudi">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(5)">Jeudi</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(5)">
+                <div (click)="openContextMenu($event, 'l', 5)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(5) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 5)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(5) }}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="vendredi">
+            <th mat-header-cell *matHeaderCellDef [class.highlight]="isHighlightDay(6)">Vendredi</th>
+            <td mat-cell *matCellDef="let weekPlanning" [class.highlight]="isHighlightDay(6)">
+                <div (click)="openContextMenu($event, 'l', 6)" class="contextMenuBase">
+                    {{ weekPlanning.getLunchMealTitle(6) }}
+                </div>
+                <div class="separator"></div>
+                <div (click)="openContextMenu($event, 'd', 6)" class="contextMenuBase">
+                    {{ weekPlanning.getDinnerMealTitle(6) }}
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+</div>
+<app-context-menu *ngIf="isDisplayContextMenu"
+                    (contextMenuClick)="handleMenuClick($event)"
+                    [items]="contextMenuItemsBase"
+                    [x]="contextMenuX"
+                    [y]="contextMenuY">
+</app-context-menu>
+<app-context-menu *ngIf="isDisplayContextMenuChange"
+                    (contextMenuClick)="handleMenuClick($event)"
+                    [items]="contextMenuItemsChange"
+                    [x]="contextMenuX"
+                    [y]="contextMenuY">
+</app-context-menu>
+
+
+<div class="btns">
+    <button (click)="onGenerateAllMeals()">Générer tous les repas</button>
+    <button>Exporter la liste de courses</button> 
+</div>
+<!--<div class="fleches">
+</div>
+<div class="btns">
+    <button [class.hidden]="updateSeveralMealMode === false">Je choisis</button>
+    <button [class.hidden]="updateAllMealMode === false">Je choisis</button>
+    <button [class.hidden]="true">Galipe</button>
+</div>
+<div class="btns">
+    <button [class.hidden]="updateSeveralMealMode === false">Au hasard</button>
+    <button [class.hidden]="updateAllMealMode === false">Au hasard</button>
+</div>
+<div class="btns">
+    <button [class.hidden]="updateSeveralMealMode === false" (click)="onOkSeveralMeals()">OK</button>
+    <button [class.hidden]="updateAllMealMode === false" (click)="onOkAllMeals()">OK</button>
+</div>-->
+<!--<div class="btns">
+    <div class="row">
+        <button (click)="onGenerateSeveralMeals()">Générer un/des repas</button>
+        <button (click)="onChooseSeveralMeals()" [class.hidden]="updateSeveralMealMode === false">Je choisis</button>
+        <button [class.hidden]="updateSeveralMealMode === false">Au hasard</button>
+        <button [class.hidden]="updateSeveralMealMode === false" (click)="onOkSeveralMeals()">OK</button>
+    </div>
+    <div class="row">
+        <button (click)="onGenerateAllMeals()">Générer tous les repas</button>
+        <button [class.hidden]="updateAllMealMode === false">Je choisis</button>
+        <button [class.hidden]="updateAllMealMode === false">Au hasard</button>
+        <button [class.hidden]="updateAllMealMode === false" (click)="onOkAllMeals()">OK</button>
+    </div>
+    <div class="row">
+        <button>Exporter la liste de courses</button> 
+        <button [class.hidden]="true">Galipe</button>
+    </div>
+</div>-->
+

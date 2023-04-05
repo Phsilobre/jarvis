@@ -1,0 +1,5 @@
+<div class="menu" [style.left]="x + 20 + 'px'" [style.top]="y + 20 + 'px'">
+    <div *ngFor="let menuItem of items" (click)="onClick($event, menuItem.link)" class="item" [class.autoclose]="menuItem.autoclose" [class.firstItem]="menuItem === items[0]">
+        {{ menuItem.title }}
+    </div>
+</div>

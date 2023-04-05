@@ -1,0 +1,16 @@
+<h1>Liste des repas connus</h1>
+<div>
+    <mat-form-field>
+        <mat-label>Choisir un repas...</mat-label>
+        <mat-select [(ngModel)]="repasSelectionne">
+            <mat-option *ngFor="let meal of meals" [value]="meal">{{ meal.title }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="ajout">
+    <button (click)="ajouter()">Ajouter nouveau plat...</button>
+</div>
+<div class="fermeture">
+    <button (click)="close()">Valider</button>
+    <button (click)="cancel()">Annuler</button>
+</div>

@@ -1,0 +1,124 @@
+.planning {
+    width: 1250px;
+    margin: 16% 16% 0% 16%;
+    height: 500px;
+    background-color: #20BBFF;
+    border: 2px solid #2020AA;
+    border-radius: 10px;
+}
+
+.titlePlanning {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 3%;
+}
+
+table {
+    padding: 3%;
+    margin-left: 1%;
+    width: 98%;
+    height: 75%;
+    background-color: #20BBFF;
+}
+
+td>div, th {
+    color: #070733;
+    font-size: 14px;
+    text-align: center;
+}
+
+.bold, th {
+    font-weight: bold;
+    text-align: center !important;
+}
+
+.btns {
+    margin: 3% 15% 0% 35%;
+}
+
+a {
+    position: absolute;
+    top: 385px;
+    left: 200px;
+    border: 1px solid #20BBFF;
+    border-radius: 10px;
+}
+
+.btns button {
+    font-size: 16px; 
+    font-weight: bold;
+    color: #070733;
+    border: 2px solid #2020AA;
+    border-radius: 10px;
+    background-color: #20BBFF;
+    width: 200px;
+    height: 62px;
+    margin-right: 14%;
+    cursor: pointer;
+    line-height: 30px;
+}
+
+button:focus {
+    outline: #2020AA;
+    border-radius: 10px;
+}
+
+.mat-column-samedi {
+    width: 12.5% !important;
+}
+
+.highlight {
+    background-color: #638bd6;
+}
+
+.mat-column-dimanche {
+    width: 12.5% !important;
+}
+
+.mat-column-lundi {
+    width: 12.5% !important;
+}
+
+.mat-column-mardi {
+    width: 12.5% !important;
+}
+
+.mat-column-mercredi {
+    width: 12.5% !important;
+}
+
+.mat-column-jeudi {
+    width: 12.5% !important;
+}
+
+.mat-column-vendredi {
+    width: 12.5% !important;
+}
+
+.row {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2% 0% 0% 5%;
+}
+
+.row>button {
+    display: block;
+    margin-bottom: 15%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.contextMenuBase {
+    cursor: pointer;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.separator {
+    width: 100px;
+    height: 1px;
+    background-color: #2020AA;
+    margin: 10% 15%;
+}

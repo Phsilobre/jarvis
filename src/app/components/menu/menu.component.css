@@ -1,0 +1,6 @@
+div { 
+    padding: 20% 10%;
+    display: flex; 
+    justify-content:center; 
+    align-items:center;
+}

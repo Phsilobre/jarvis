@@ -1,0 +1,45 @@
+mat-select {
+    width: 300px;
+}
+
+::ng-deep .mat-form-field-label,
+::ng-deep .mat-select-arrow,
+::ng-deep .mat-option-text {
+    color: #20BBFF !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    background-color: #2020AA !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+    display: none;
+}
+
+::ng-deep .mat-form-field {
+    width: 300px;  
+}
+
+div {
+    margin: 2%;
+}
+
+button {
+    background-color: #20BBFF;
+    border: 2px solid #2020AA;
+    border-radius: 10px;
+}
+
+button:focus {
+    outline: #2020AA;
+    border-radius: 10px;
+}
+
+.ajout>button {
+    width: 100%;
+    margin: 5% 0% 8% 0%;
+}
+
+.fermeture>button {
+    width: 50%;
+}

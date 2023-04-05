@@ -1,0 +1,4 @@
+<div class="corvee" *ngIf="chore" [style.border-color]="color">
+    <div class="category">{{ chore.category | choreCategory }}</div>
+    <div class="nom">{{ chore.name }}</div>
+</div>
