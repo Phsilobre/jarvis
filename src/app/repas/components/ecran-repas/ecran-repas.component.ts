@@ -87,7 +87,6 @@ export class EcranRepasComponent implements OnInit {
         this.isDisplayContextMenuChange = true;
       break;
       case AppRepasParameters.EVENT_DETAIL_MEAL : 
-        console.log('TODO On détaille le repas.');
       break;
       case AppRepasParameters.EVENT_CHANGE_MEAL_ME :
         this.openMealSelectionPopup();
@@ -96,7 +95,7 @@ export class EcranRepasComponent implements OnInit {
         this.changeMeal(this.getRandomMeal());
       break;
       default: 
-        console.log('Erreur, cas non pris en compte : ', event.data);
+        console.error('Erreur, cas non pris en compte : ', event.data);
       break;
     }
   }

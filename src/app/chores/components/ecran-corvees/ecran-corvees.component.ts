@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { ChoreService } from '../../services/chore.service';
 import { Location } from '@angular/common';
-import { Chore } from 'src/app/models/chore';
+import { Chore, ALL_CHORES_CATEGORIES, ChoreCategory } from 'src/app/models/chore';
 
 @Component({
   selector: 'j-ecran-corvees',
@@ -14,6 +14,8 @@ export class EcranCorveesComponent implements OnInit {
 
   chores: Chore[] = [];
 
+  categories: ChoreCategory[] = ALL_CHORES_CATEGORIES;
+
   onBack(): void {
     this.locService.back();
   }
@@ -22,10 +24,12 @@ export class EcranCorveesComponent implements OnInit {
 
     this.choreService.getAllChores().subscribe((chores: Chore[]): void => {
       this.chores = chores;
-      console.log('Les corvees chargees : ', this.chores);
-      
     })
 
+  }
+
+  getChores(category: ChoreCategory): Chore[] {
+    return this.chores.filter((x: Chore) => x.category === category);
   }
 
 

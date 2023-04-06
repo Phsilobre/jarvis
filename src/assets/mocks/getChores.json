@@ -3,111 +3,139 @@
         "id": "01",
         "name": "aspirateur",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 1,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "02",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 2,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "03",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 3,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "04",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 1,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "05",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 2,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "06",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 3,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "01",
         "name": "aspirateur",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 1,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "02",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 4,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "03",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 5,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "04",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 1,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "05",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 1,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "06",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 0,
+        "lastDone": "04/01/2023"
     },{
         "id": "01",
         "name": "aspirateur",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 0,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "02",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 0,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "03",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 0,
+        "lastDone": "04/01/2023"
     },
     {
         "id": "04",
         "name": "vitres",
         "frequency": 2,
-        "category": "GENERAL",
-        "lastDone": "01/04/2023"
+        "category": 0,
+        "lastDone": "04/01/2023"
+    },
+    {
+        "id": "05",
+        "name": "vitres",
+        "frequency": 2,
+        "category": 1,
+        "lastDone": "03/30/2023"
+    },
+    {
+        "id": "04",
+        "name": "vitres",
+        "frequency": 2,
+        "category": 2,
+        "lastDone": "03/30/2023"
+    },
+    {
+        "id": "03",
+        "name": "vitres",
+        "frequency": 2,
+        "category": 3,
+        "lastDone": "03/01/2023"
+    },
+    {
+        "id": "04",
+        "name": "vitres",
+        "frequency": 2,
+        "category": 5,
+        "lastDone": "03/01/2023"
     }
 ]

@@ -49,7 +49,6 @@ export class DayMeals {
 export class FullPlanning {
    
     init() {
-      console.log('On passe dans le init planning');
       this.meals[0] = new DayMeals(new Meal(), new Meal());
       this.meals[1] = new DayMeals(new Meal(), new Meal());
       this.meals[2] = new DayMeals(new Meal(), new Meal());

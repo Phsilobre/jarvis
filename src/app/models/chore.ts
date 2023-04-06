@@ -1,5 +1,5 @@
 export class Chore {
-    constructor(public id: number, public name: string, public frequency: number, public category: string, public lastDone: Date) {}
+    constructor(public id: number, public name: string, public frequency: number, public category: ChoreCategory, public lastDone: Date) {}
 }
 
 export enum ChoreCategory {
@@ -11,3 +11,12 @@ export enum ChoreCategory {
 	OUTSIDE,
 	GENERAL
 }
+
+export const ALL_CHORES_CATEGORIES = [
+	ChoreCategory.KITCHEN,
+	ChoreCategory.LIVINGROOM,
+	ChoreCategory.BEDROOM,
+	ChoreCategory.TOILETS,
+	ChoreCategory.OUTSIDE,
+	ChoreCategory.GENERAL
+];

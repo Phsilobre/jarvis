@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { Chore } from 'src/app/models/chore';
+import { Chore, ChoreCategory } from 'src/app/models/chore';
 
 @Component({
   selector: 'app-corvee',
@@ -20,14 +20,9 @@ export class CorveeComponent implements OnInit {
 
   updateBorderColor(): void {
     if (this.chore) {
-      if (this.chore.category === 'LIVINGROOM') {
-        this.chore.lastDone = new Date();
-      }
-      const diffInDays: number = moment(this.chore.lastDone).diff(moment(), 'days');
-      console.log('Analyse de la date ', moment(this.chore.lastDone).toLocaleString());
-      console.log('Diff de durée : ', moment(this.chore.lastDone).diff(moment(), 'days'));
-      
-      if (diffInDays < 0) {
+      const diffInDays: number = moment().diff(moment(this.chore.lastDone), 'days');
+      console.log('DiffInDays: ', diffInDays);
+      if (diffInDays === 0) {
         this.color = 'green';
       } else if (diffInDays < 3) {
         this.color = 'orange';
@@ -36,4 +31,11 @@ export class CorveeComponent implements OnInit {
       }
     }
   }
+
+  onClick(): void {
+    this.chore.lastDone = new Date();
+    this.updateBorderColor();
+    // TODO : mettre à jour dans le store, et à distance
+  }
 }
+

@@ -1,8 +1,11 @@
 <a (click)="onBack()"><img src="/assets/img/leftArrow.png"/></a>
 <div class="content">
-    <mat-grid-list cols="4" rowHeight="120px">
-        <mat-grid-tile *ngFor="let chore of chores">
-            <app-corvee [chore]="chore"></app-corvee>
-        </mat-grid-tile>
-    </mat-grid-list>
+    <div *ngFor="let category of categories">
+        <span>{{ category | choreCategory }}</span>
+        <mat-grid-list cols="4" rowHeight="120px">
+            <mat-grid-tile *ngFor="let chore of getChores(category)">
+                <app-corvee [chore]="chore"></app-corvee>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
 </div>

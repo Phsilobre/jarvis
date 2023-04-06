@@ -6,25 +6,24 @@ import { Chore, ChoreCategory } from 'src/app/models/chore';
 })
 export class ChoreCategoryPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
-    console.log('Value à transformer : ', value);
+  transform(value: ChoreCategory, ...args: unknown[]): string {
     switch(value) {
-      case 'KITCHEN':
+      case ChoreCategory.KITCHEN:
         return 'Cuisine';
-      case 'BATHROOM':
+      case ChoreCategory.BATHROOM:
         return 'Salle de bains';
-      case 'BEDROOM':
+      case ChoreCategory.BEDROOM:
         return 'Chambre';
-      case 'GENERAL':
+      case ChoreCategory.GENERAL:
         return 'Global';
-      case 'OUTSIDE':
+      case ChoreCategory.OUTSIDE:
         return 'Extérieur';
-      case 'TOILETS':
+      case ChoreCategory.TOILETS:
         return 'Toilettes';
-      case 'LIVINGROOM':
+      case ChoreCategory.LIVINGROOM:
         return 'Salon';
       default:
-        console.log('No value found for ', value);
+        console.error('No value found for ', value);
         
     }
     return '';
