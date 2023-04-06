@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EcranListeRepasConnusComponent } from './ecran-liste-repas-connus.component';
 
@@ -6,7 +6,7 @@ describe('EcranListeRepasConnusComponent', () => {
   let component: EcranListeRepasConnusComponent;
   let fixture: ComponentFixture<EcranListeRepasConnusComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EcranListeRepasConnusComponent ]
     })
