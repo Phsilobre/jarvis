@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 import { select, Store } from '@ngrx/store';
 import { Meal } from 'src/app/models/meal';
 import * as fromMeals from 'src/app/ngrx/meals/meals.state';

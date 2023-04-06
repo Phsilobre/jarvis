@@ -6,7 +6,7 @@ import * as RepasActions from 'src/app/ngrx/meals/meals.action';
 import * as fromRepas from 'src/app/ngrx/meals/meals.state';
 import { MenuLink } from 'src/app/models/menu-lien';
 import { AppRepasParameters } from 'src/app/models/app-repas-parameters';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { EcranListeRepasConnusComponent } from '../ecran-liste-repas-connus/ecran-liste-repas-connus.component';
 import { MealsService } from '../../services/meals.service';
 import { PlanningService } from '../../services/planning.service';
