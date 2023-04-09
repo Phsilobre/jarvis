@@ -9,11 +9,45 @@
 }
 
 a {
+  cursor: pointer;
+}
+
+a.back {
     position: absolute;
     top: 385px;
-    left: 200px;
-    border: 1px solid #20BBFF;
-    border-radius: 10px;
+    left: 192px;
+}
+
+a#triAlphab {
+  position: absolute;
+  top: 125px;
+  left: 980px;
+  padding: 20px;
+  color: #2020AA;
+}
+
+a#triDate {
+  position: absolute;
+  top: 125px;
+  left: 1043px;
+  padding: 20px;
+  color: #2020AA;
+}
+
+a#triPieces {
+  position: absolute;
+  top: 190px;
+  left: 990px;
+  padding: 20px;
+  color: #2020AA;
+}
+
+a#test {
+  position: absolute;
+  top: 190px;
+  left: 1050px;
+  padding: 20px;
+  color: #2020AA;
 }
 
 /* width */
@@ -32,4 +66,9 @@ a {
     background: rgb(26, 124, 172);
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
+  }
+
+  .choreCategoryTitle {
+    font-size: 20px;
+    margin: 2% 0 2% 1%;
   }

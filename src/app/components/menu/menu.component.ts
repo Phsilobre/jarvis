@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import * as Modules from '../../../assets/modules.json';
 import { MenuLink } from 'src/app/models/menu-lien';
 import { Store } from '@ngrx/store';
 import * as AppRepasActions from 'src/app/ngrx/app-repas/app-repas.action';
+import { ALL_MODULES } from 'src/assets/modules';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
   constructor(private stores: Store) { }
 
   ngOnInit(): void {
-    this.listeModules = Modules.liens;
+    this.listeModules = ALL_MODULES;
 
     // TODO : voir si on peut ne le faire qu'une fois
     this.stores.dispatch(AppRepasActions.Init());

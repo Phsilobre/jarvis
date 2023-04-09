@@ -1,9 +1,31 @@
-<a (click)="onBack()"><img src="/assets/img/leftArrow.png"/></a>
+<a class="back" (click)="onBack()"><img src="/assets/img/leftArrow.png"/></a>
+<a class="" id="triAlphab" (click)="trierParAlphabetique()">A-Z</a>
+<a class="" id="triPieces" (click)="trierParPieces()">P</a>
+<a class="" id="triDate" (click)="trierParDate()">01 Jan</a>
+<a class="" id="test" (click)="test()">Test</a>
 <div class="content">
-    <div *ngFor="let category of categories">
-        <span>{{ category | choreCategory }}</span>
+    <div *ngIf="triAlpha">
         <mat-grid-list cols="4" rowHeight="120px">
-            <mat-grid-tile *ngFor="let chore of getChores(category)">
+            <mat-grid-tile *ngFor="let chore of getChoresByAlpha()">
+                <app-corvee [chore]="chore"></app-corvee>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <div *ngIf="triPieces">
+        <ng-container *ngFor="let category of categories">
+            <div class="choreCategoryTitle">{{ category | choreCategory }}</div>
+            <mat-grid-list cols="4" rowHeight="120px">
+                <mat-grid-tile *ngFor="let chore of getChoresByCategory(category)">
+                    <app-corvee [chore]="chore"></app-corvee>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </ng-container>
+    </div>
+
+    <div *ngIf="triDate">
+        <mat-grid-list cols="4" rowHeight="120px">
+            <mat-grid-tile *ngFor="let chore of getChoresByDate()">
                 <app-corvee [chore]="chore"></app-corvee>
             </mat-grid-tile>
         </mat-grid-list>

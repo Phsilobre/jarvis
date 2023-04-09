@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ContextMenuComponent } from './components/context-menu/context-menu.component';
 import { ChoreCategoryPipe } from './pipes/chore-category.pipe';
 
@@ -11,11 +11,13 @@ import { ChoreCategoryPipe } from './pipes/chore-category.pipe';
     ChoreCategoryPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DatePipe
   ],
   exports: [
     ContextMenuComponent,
-    ChoreCategoryPipe
+    ChoreCategoryPipe,
+    DatePipe
   ]
 })
 export class SharedModule { }

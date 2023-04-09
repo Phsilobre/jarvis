@@ -21,7 +21,6 @@ export class CorveeComponent implements OnInit {
   updateBorderColor(): void {
     if (this.chore) {
       const diffInDays: number = moment().diff(moment(this.chore.lastDone), 'days');
-      console.log('DiffInDays: ', diffInDays);
       if (diffInDays === 0) {
         this.color = 'green';
       } else if (diffInDays < 3) {

@@ -1,5 +1,6 @@
-{
-    "liens" : [
+import { MenuLink } from "src/app/models/menu-lien";
+
+export const ALL_MODULES: MenuLink[] = [
         {
             "title": "Repas",
             "link": "/repas",
@@ -15,5 +16,4 @@
             "link": "/courses",
             "autoclose": false
         }
-    ]
-}
+    ];

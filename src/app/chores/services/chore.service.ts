@@ -10,9 +10,9 @@ import { environment } from 'src/environments/environment';
 export class ChoreService {
 
   getAllChores(): Observable<Chore[]> {
-    let url = environment.baseUrl + '/chorelist';
+    let url = environment.vision + 'chores';
     // Mock :
-    url = '/assets/mocks/getChores.json';
+    // url = '/assets/mocks/getChores.json';
 
 
     return this.httpClient.get<Chore[]>(url);
