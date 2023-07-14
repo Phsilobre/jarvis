@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { Chore, ChoreCategory } from 'src/app/models/chore';
+import { Chore } from 'src/app/models/chore';
+import { ChoreService } from '../../services/chore.service';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { ChoresAction } from 'src/app/ngrx/chores/chores.action';
 
 @Component({
   selector: 'app-corvee',
@@ -12,7 +16,7 @@ export class CorveeComponent implements OnInit {
   @Input() chore: Chore = undefined;
   color: string = 'red';
 
-  constructor() { }
+  constructor(private readonly router: Router, private readonly stores: Store) { }
 
   ngOnInit(): void {
     this.updateBorderColor();
@@ -32,9 +36,12 @@ export class CorveeComponent implements OnInit {
   }
 
   onClick(): void {
-    this.chore.lastDone = new Date();
     this.updateBorderColor();
-    // TODO : mettre à jour dans le store, et à distance
+    this.stores.dispatch(new ChoresAction.UpdateLastDone(this.chore));
+  }
+
+  onLongPress(): void {
+    this.router.navigate(['corvee', this.chore._id]);
   }
 }
 

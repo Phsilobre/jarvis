@@ -1,4 +1,4 @@
-import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
+/*import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { Meal } from "src/app/models/meal";
 
@@ -22,4 +22,4 @@ export const getRandomMeals = (nb: number): any => createSelector(getAllMeals, (
         returnedMeals.push(meals[Math.floor((Math.random() * meals.length) + 1)]);
     }
     return returnedMeals;
-});
+});*/

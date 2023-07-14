@@ -1,11 +1,9 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
-import { select, Store } from '@ngrx/store';
 import { Meal } from 'src/app/models/meal';
-import * as fromMeals from 'src/app/ngrx/meals/meals.state';
 import { MealsService } from '../../services/meals.service';
 import { EcranAjoutRepasComponent } from '../ecran-ajout-repas/ecran-ajout-repas.component';
-import * as RepasActions from 'src/app/ngrx/meals/meals.action';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-ecran-liste-repas-connus',
@@ -39,7 +37,11 @@ export class EcranListeRepasConnusComponent implements OnInit {
     dialogRef.afterClosed().subscribe(nouveauRepas => {
       if (nouveauRepas) {
         this.api.addMeal(nouveauRepas).subscribe(result => {
+          /* 
+          TODO : à migrer
+    
           this.stores.dispatch(RepasActions.AddOne({payload: result}));
+          */
           this.repasSelectionne = result;
         });
       }
@@ -47,9 +49,13 @@ export class EcranListeRepasConnusComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /* 
+    TODO : à migrer
+    
     this.stores.pipe(select(fromMeals.getAllMeals)).subscribe(meals => {
       this.meals = meals;
     });
+    */
   }
 
 }

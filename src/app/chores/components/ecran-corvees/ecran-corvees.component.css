@@ -50,6 +50,12 @@ a#test {
   color: #2020AA;
 }
 
+a#settings {
+  position: absolute;
+  top: 773px;
+  left: 186px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 20px;

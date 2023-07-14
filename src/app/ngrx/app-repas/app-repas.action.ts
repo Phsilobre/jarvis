@@ -1,4 +1,4 @@
-import { createAction } from "@ngrx/store";
+/*import { createAction } from "@ngrx/store";
 
 const appRepas: string = '[App-Repas] ';
 
@@ -7,3 +7,4 @@ export const ActivateUpdateOneMealMode = createAction(appRepas + 'Activate updat
 export const DeactivateUpdateSeveralMealsMode = createAction(appRepas + 'Deactivate update several meals mode');
 export const ActivateUpdateAllMealsMode = createAction(appRepas + 'Activate update all meals mode');
 export const DeactivateUpdateAllMealsMode = createAction(appRepas + 'Deactivate update all meals mode');
+*/

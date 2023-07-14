@@ -1,9 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meal, FullPlanning } from 'src/app/models/meal';
-import { select, Store } from '@ngrx/store';
-import * as RepasActions from 'src/app/ngrx/meals/meals.action';
-import * as fromRepas from 'src/app/ngrx/meals/meals.state';
 import { MenuLink } from 'src/app/models/menu-lien';
 import { AppRepasParameters } from 'src/app/models/app-repas-parameters';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
@@ -11,6 +8,7 @@ import { EcranListeRepasConnusComponent } from '../ecran-liste-repas-connus/ecra
 import { MealsService } from '../../services/meals.service';
 import { PlanningService } from '../../services/planning.service';
 import { PlanningAdapterService } from '../../services/planning-adapter.service';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-ecran-repas',
@@ -153,9 +151,11 @@ export class EcranRepasComponent implements OnInit {
       this.planning[0] = new FullPlanning();
       this.planning[0].init();
       
+      /* TODO : à migrer
       this.mealsService.loadMeals().subscribe((repas: Meal[]) => {
         this.stores.dispatch(RepasActions.Clear());
         this.stores.dispatch(RepasActions.AddMany({payload: repas}));
+        
       });
       
       this.stores.pipe(select(fromRepas.getAllMeals)).subscribe((meals) => {
@@ -164,11 +164,13 @@ export class EcranRepasComponent implements OnInit {
         // TODO : charger les repas, une seule fois, plutôt que de les re-générer
         /* if (meals.length > 0) {
           this.onGenerateAllMeals();
-        }*/
-      });
+        }
+      )
+      };
+      */
     }
   }
 
-  constructor(private locService : Location, private stores: Store, private dialog: MatDialog, private mealsService: MealsService, private planningService: PlanningService, private readonly adapterPlanning: PlanningAdapterService) { }
+  constructor(private locService: Location, private stores: Store, private dialog: MatDialog, private mealsService: MealsService, private planningService: PlanningService, private readonly adapterPlanning: PlanningAdapterService) { }
 
 }

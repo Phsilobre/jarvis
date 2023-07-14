@@ -5,17 +5,21 @@ import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CorveeComponent } from './components/corvee/corvee.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxLongPress2Module } from 'ngx-long-press2';
+import { EcranCorveeComponent } from './components/ecran-corvee/ecran-corvee.component';
 
 @NgModule({
   declarations: [
     EcranCorveesComponent,
-    CorveeComponent
+    CorveeComponent,
+    EcranCorveeComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxLongPress2Module
   ]
 })
 export class ChoresModule { }

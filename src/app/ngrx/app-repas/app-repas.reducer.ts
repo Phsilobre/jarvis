@@ -1,5 +1,5 @@
 import { state } from "@angular/animations";
-import { Action, createReducer, on } from "@ngrx/store";
+/*import { Action, createReducer, on } from "@ngrx/store";
 import { AppRepasParameters } from "src/app/models/app-repas-parameters";
 import * as AppRepasActions from './app-repas.action';
 import { adapter, AppRepasState, initializeState } from "./app-repas.state";
@@ -17,4 +17,4 @@ const reducer = createReducer(
 
 export function AppRepasReducer(state: AppRepasState | undefined, action: Action): any {
     return reducer(state, action);
-}
+}*/

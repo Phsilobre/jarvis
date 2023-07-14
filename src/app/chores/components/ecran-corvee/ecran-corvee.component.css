@@ -1,0 +1,109 @@
+.content {
+    width: 1250px;
+    margin: 16% 16% 0% 16%;
+    height: 500px;
+    background-color: #20BBFF;
+    border: 2px solid #2020AA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+  
+a.back {
+    cursor: pointer;
+    position: absolute;
+    top: 385px;
+    left: 192px;
+}
+
+.champ {
+    padding: 2% 40%;
+    min-width: 21%;
+    text-align: center;
+}
+
+.champ>label {
+    padding-right: 3%;
+}
+
+.champ>input {
+    background-color: #20BBFF;
+    border-radius: 20px;
+    width: 243px;
+    font-family: "Neuropol-X", "Helvetica Neue", sans-serif !important;
+}
+
+.champ>input:focus-visible {
+    outline: none;
+}
+
+.champ>label {
+    display: block;
+}
+
+.champ>select {
+    background-color: #20BBFF;
+    font-family: "Neuropol-X", "Helvetica Neue", sans-serif !important;
+    width: 250px;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black grey grey black;
+    margin-top: 2%;
+}
+
+.champ>select:focus-visible {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background-color: #20BBFF;
+  color: #20BBFF;
+  margin: 0;
+}
+
+.datePicker input, .datePicker:hover {
+    background-color: #20BBFF;
+    color: black;
+    font-family: "Neuropol-X", "Helvetica Neue", sans-serif !important;
+}
+
+::ng-deep .datePicker>.mdc-text-field--filled {
+    background-color: #20BBFF;
+}
+
+::ng-deep .datePicker button {
+    color: #424242;
+    font-family: "Neuropol-X", "Helvetica Neue", sans-serif !important;
+}
+
+::ng-deep .datePicker label {
+    color: black !important;
+}
+
+::ng-deep .datePicker .mat-mdc-form-field-focus-overlay {
+    opacity: 0 !important;
+}
+
+::ng-deep .datePicker .mdc-line-ripple::after, ::ng-deep .datePicker .mdc-line-ripple {
+    border-bottom-width: 0 !important;
+}
+
+::ng-deep .mat-calendar-body-cell>span {
+    background-color: #424242 !important;
+}
+
+::ng-deep .mat-calendar-body-cell:hover, ::ng-deep .mat-calendar-body-cell:hover>span {
+    background-color: #575757 !important;
+}
+
+mat-hint {
+    font-family: "Neuropol-X", "Helvetica Neue", sans-serif !important;
+}
+
+.champ:last-of-type {
+    padding-top: 0;
+}

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngxs/store';
 import { MenuLink } from 'src/app/models/menu-lien';
-import { Store } from '@ngrx/store';
-import * as AppRepasActions from 'src/app/ngrx/app-repas/app-repas.action';
 import { ALL_MODULES } from 'src/assets/modules';
 
 @Component({
@@ -19,7 +18,11 @@ export class MenuComponent implements OnInit {
     this.listeModules = ALL_MODULES;
 
     // TODO : voir si on peut ne le faire qu'une fois
+    /* 
+    TODO : à migrer
+    
     this.stores.dispatch(AppRepasActions.Init());
+    */
   }
 
 }

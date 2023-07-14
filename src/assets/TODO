@@ -8,3 +8,9 @@
 - Lors du changement d'un repas, afficher sa dernière planification.
 
 - Export liste courses par mail
+
+- Remplacer NGRX par NGXS
+
+[Corvees] 
+- Sur la page de MAJ de la corvée, écouter les changements, mettre à jour NGRX, appeler la BD
+- Bug : lors de la mise à jour de la date de la corvée, ça en créé une nouvelle

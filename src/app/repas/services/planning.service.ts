@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Planning } from 'src/app/models/planning';
 import { environment } from 'src/environments/environment';

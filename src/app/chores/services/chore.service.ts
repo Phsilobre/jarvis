@@ -18,5 +18,11 @@ export class ChoreService {
     return this.httpClient.get<Chore[]>(url);
   }
 
+  updateChore(chore: Chore) {
+    let url = environment.vision + 'chores/' + chore._id;
+
+    return this.httpClient.put<Chore>(url, chore);
+  }
+
   constructor(public httpClient: HttpClient) { }
 }

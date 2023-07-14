@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Meal } from 'src/app/models/meal';
 import { environment } from 'src/environments/environment';
-import * as RepasActions from 'src/app/ngrx/meals/meals.action';
 
 @Injectable({
   providedIn: 'root'

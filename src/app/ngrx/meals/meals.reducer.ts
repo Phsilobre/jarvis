@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from "@ngrx/store";
+/*import { Action, createReducer, on } from "@ngrx/store";
 import * as RepasActions from './meals.action';
 import { adapter, initializeState, RepasState } from "./meals.state";
 
@@ -13,4 +13,4 @@ const reducer = createReducer(
 
 export function RepasReducer(state: RepasState | undefined, action: Action): any {
     return reducer(state, action);
-}
+}*/

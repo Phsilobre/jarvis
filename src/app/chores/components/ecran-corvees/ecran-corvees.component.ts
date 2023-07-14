@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store } from '@ngxs/store';
 import { ChoreService } from '../../services/chore.service';
 import { Location } from '@angular/common';
 import { Chore, ALL_CHORES_CATEGORIES, ChoreCategory } from 'src/app/models/chore';
-import * as moment from 'moment';
+import { Router } from '@angular/router';
+import { ChoresState } from 'src/app/ngrx/chores/chores.state';
+import { ChoresAction } from 'src/app/ngrx/chores/chores.action';
 
 @Component({
   selector: 'j-ecran-corvees',
@@ -25,17 +27,21 @@ export class EcranCorveesComponent implements OnInit {
     this.locService.back();
   }
 
+  onSettings(): void {
+    this.router.navigate(['/corvees-settings']);
+  }
+
   ngOnInit(): void {
 
-    this.choreService.getAllChores().subscribe((chores: Chore[]): void => {
-      this.chores = chores;
-      /* Verrue à améliorer */
-      this.chores.forEach((chore: Chore) => chore.lastDone = new Date(chore.lastDone));
-      this.choresByDate = [...this.chores].sort((a, b): number => a.lastDone.getTime() - b.lastDone.getTime());
-      console.log('Length : ', this.choresByDate.length);
-      
-    })
+    this.chores = this.stores.selectSnapshot(ChoresState.getAllChores);
+    if(this.chores.length === 0) {
+      this.stores.dispatch(new ChoresAction.LoadAll());
+    }
 
+    this.stores.select(ChoresState.getAllChores).subscribe((chores: Chore[]): void => {
+      this.chores = chores;
+      this.choresByDate = [...this.chores].sort((a, b): number => a.lastDone.getTime() - b.lastDone.getTime());
+    });
   }
 
   getChoresByCategory(category: ChoreCategory): Chore[] {
@@ -66,7 +72,6 @@ export class EcranCorveesComponent implements OnInit {
   }
 
   trierParPieces(): void {
-    // this.reverse = this.triPieces;
     this.triDate = false;
     this.triAlpha = false;
     this.triPieces = true;
@@ -80,13 +85,9 @@ export class EcranCorveesComponent implements OnInit {
   }
 
   test(): void {
-    console.log('Nombre de corvees : ', this.chores.length);
-    console.log('Nombre de corvees par alpha: ', this.getChoresByAlpha().length);
-    console.log('Nombre de corvees par date: ', this.getChoresByDate().length);
-
   }
 
 
-  constructor(private locService : Location, private stores: Store, private choreService: ChoreService) { }
+  constructor(private locService : Location, private stores: Store, private choreService: ChoreService, private readonly router: Router) { }
 
 }

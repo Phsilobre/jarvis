@@ -1,0 +1,38 @@
+<a class="back" (click)="onBack()"><img src="/assets/img/leftArrow.png"/></a>
+<div class="content" *ngIf="chore">
+
+    <div class="champ">
+        <label>Nom :</label>
+        <input type="text" name="name" [value]="chore.name"/>
+    </div>
+
+    <div class="champ">
+        <label>Fréquence :</label>
+        <select (change)="onChangeFrequence($event.target.value)">
+            <option *ngFor="let frequence of frequences" [value]="frequence.value" [selected]="frequence.value === chore.frequency">{{ frequence.label }}</option>
+        </select>
+    </div>
+
+    <div class="champ">
+        <label>Pièce :</label>
+        <select (change)="onChangeCategorie($event.target.value)">
+            <option *ngFor="let categorie of categories" [value]="categorie.category" [selected]="categorie.category === chore.category">{{ categorie.label }}</option>
+        </select>
+    </div>
+
+    <div class="champ">
+        <label>Fait pour la dernière fois :</label>
+        <mat-form-field appearance="fill" class="datePicker">
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="champ">
+        <label>Supprimer :</label>
+        <a (click)="onDelete()"><img src="/assets/img/leftArrow.png"/></a>
+    </div>
+
+</div>

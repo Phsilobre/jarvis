@@ -1,4 +1,4 @@
-import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
+/*import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { AppRepasParameters } from "src/app/models/app-repas-parameters";
 
@@ -23,4 +23,4 @@ function getAppRepas(appRepasState: AppRepasState): AppRepasParameters {
     } else {
         return new AppRepasParameters();
     }
-}
+}*/
