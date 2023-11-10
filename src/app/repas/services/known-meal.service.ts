@@ -7,19 +7,19 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class MealsService {
-  
-  loadRecentMeals(): Observable<Meal[]> {
+export class KnownMealService {
 
-    const url = environment.baseUrl + '/meals';
+  loadKnownMeals(): Observable<Meal[]> {
+
+    const url = environment.baseUrl + '/knownMeals';
 
     return this.httpClient.get<Meal[]>(url);
 
   }
 
-  addMeal(meal: Meal): Observable<any> {
+  addKnownMeal(meal: Meal): Observable<any> {
     
-    const url = environment.baseUrl + '/meals'
+    const url = environment.baseUrl + '/knownMeals'
 
     return this.httpClient.post<Meal>(url, meal);
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { KnownMeal } from 'src/app/models/knownMeals';
 import { Meal } from 'src/app/models/meal';
 
 @Component({
@@ -11,7 +12,10 @@ export class EcranAjoutRepasComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EcranAjoutRepasComponent>) {}
   
-  nouveauRepas: Meal = new Meal();
+  nouveauRepas: KnownMeal = {
+    id: '-1',
+    title: ''
+  };
 
   onValider(): void {
     this.dialogRef.close(this.nouveauRepas);

@@ -1,14 +1,15 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Meal, FullPlanning } from 'src/app/models/meal';
+import { Meal } from 'src/app/models/meal';
 import { MenuLink } from 'src/app/models/menu-lien';
 import { AppRepasParameters } from 'src/app/models/app-repas-parameters';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { EcranListeRepasConnusComponent } from '../ecran-liste-repas-connus/ecran-liste-repas-connus.component';
 import { MealsService } from '../../services/meals.service';
-import { PlanningService } from '../../services/planning.service';
 import { PlanningAdapterService } from '../../services/planning-adapter.service';
 import { Store } from '@ngxs/store';
+import { KnownMealService } from '../../services/known-meal.service';
+import { KnownMeal } from 'src/app/models/knownMeals';
 
 @Component({
   selector: 'app-ecran-repas',
@@ -22,8 +23,8 @@ export class EcranRepasComponent implements OnInit {
   isDisplayContextMenu: boolean = false;
   isDisplayContextMenuChange: boolean = false;
   
-  planning: FullPlanning[] = []; //[0] = Planning des repas
-  meals: Meal[] = []; // Tous les menus connus
+  planning: Meal[] = [];
+  knownMeals: KnownMeal[] = [];
 
   updatingMealNumber: number;
   updatingLunchDinner: string;
@@ -64,7 +65,7 @@ export class EcranRepasComponent implements OnInit {
   onGenerateAllMeals(): void {
     const meals: Meal[] = this.getRandomMeals(14);
     // this.planningService.addPlannings()
-    this.planning[0].updateAllMeals(meals);
+    // this.planning[0].updateAllMeals(meals);
   }
 
   isHighlightDay(dayNum: number): boolean {
@@ -90,7 +91,7 @@ export class EcranRepasComponent implements OnInit {
         this.openMealSelectionPopup();
       break;
       case AppRepasParameters.EVENT_CHANGE_MEAL_RDM :
-        this.changeMeal(this.getRandomMeal());
+        // this.changeMeal(this.getRandomMeal());
       break;
       default: 
         console.error('Erreur, cas non pris en compte : ', event.data);
@@ -111,9 +112,9 @@ export class EcranRepasComponent implements OnInit {
     });
   }
 
-  getRandomMeal(): Meal {
+  /*getRandomMeal(): Meal {
     return this.meals[Math.floor((Math.random() * this.meals.length))];
-  }
+  }*/
 
   /**
    * Number of meals wanted.
@@ -123,16 +124,16 @@ export class EcranRepasComponent implements OnInit {
 
     const returnedMeals: Meal[] = [];
     for(let i: number = 1; i <= nb; i++) {
-        returnedMeals.push(this.meals[Math.floor((Math.random() * this.meals.length))]);
+        // returnedMeals.push(this.meals[Math.floor((Math.random() * this.meals.length))]);
     }
     return returnedMeals;
   }
 
   changeMeal(meal: Meal): void {
     if (this.updatingLunchDinner === 'l') {
-      this.planning[0].updateLunch(meal, this.updatingMealNumber);
+      // this.planning[0].updateLunch(meal, this.updatingMealNumber);
     } else {
-      this.planning[0].updateDinner(meal, this.updatingMealNumber);
+      // this.planning[0].updateDinner(meal, this.updatingMealNumber);
     }
   }
 
@@ -145,11 +146,9 @@ export class EcranRepasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.isLoaded) {
-      this.isLoaded = true;
+    this.planning = [];
 
-      this.planning[0] = new FullPlanning();
-      this.planning[0].init();
+    this.mealsService.loadRecentMeals().subscribe((meals) => this.planning = meals);
       
       /* TODO : à migrer
       this.mealsService.loadMeals().subscribe((repas: Meal[]) => {
@@ -168,9 +167,8 @@ export class EcranRepasComponent implements OnInit {
       )
       };
       */
-    }
   }
 
-  constructor(private locService: Location, private stores: Store, private dialog: MatDialog, private mealsService: MealsService, private planningService: PlanningService, private readonly adapterPlanning: PlanningAdapterService) { }
+  constructor(private locService: Location, private stores: Store, private dialog: MatDialog, private mealsService: MealsService, private knownMealService: KnownMealService, private readonly adapterPlanning: PlanningAdapterService) { }
 
 }
