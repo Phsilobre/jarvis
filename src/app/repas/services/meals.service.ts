@@ -11,7 +11,7 @@ export class MealsService {
   
   loadRecentMeals(): Observable<Meal[]> {
 
-    const url = environment.baseUrl + '/meals';
+    const url = environment.vision + 'meals';
 
     return this.httpClient.get<Meal[]>(url);
 
@@ -19,7 +19,7 @@ export class MealsService {
 
   addMeal(meal: Meal): Observable<any> {
     
-    const url = environment.baseUrl + '/meals'
+    const url = environment.vision + 'meals'
 
     return this.httpClient.post<Meal>(url, meal);
   }
